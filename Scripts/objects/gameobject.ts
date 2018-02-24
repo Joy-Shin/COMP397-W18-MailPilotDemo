@@ -1,14 +1,16 @@
 module objects {
   export class GameObject extends createjs.Bitmap {
     // Private Instance Variables
-    private _dy: number;
-    private _dx: number;
+
 
     // Public Properties
     public width: number;
     public height: number;
     public halfWidth: number;
     public halfHeight: number;
+    public _dy: number;
+    public _dx: number;
+    public isColliding: boolean;
 
     // Constructors
     constructor(assetManager: createjs.LoadQueue, imageString: string) {
@@ -25,6 +27,7 @@ module objects {
       this.halfHeight = this.height * 0.5;
       this.regX = this.halfWidth;
       this.regY = this.halfHeight;
+      this.isColliding = false;
     }
 
     // Public Methods
