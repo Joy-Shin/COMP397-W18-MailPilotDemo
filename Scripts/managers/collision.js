@@ -8,8 +8,18 @@ var managers;
             var P2 = new math.Vec2(object2.x, object2.y);
             //check if there is a collision
             if ((math.Vec2.Distance(P1, P2)) < (object1.halfHeight + object2.halfHeight)) {
-                if (object2.isColliding) {
-                    console.log("Collision!");
+                //if I don't do this, collisions occur a lot at one collision
+                if (!object2.isColliding) {
+                    console.log("Collision! with " + object2.name);
+                    object2.isColliding = true;
+                    switch (object2.name) {
+                        case "island":
+                            createjs.Sound.play("yay");
+                            break;
+                        case "cloud":
+                            createjs.Sound.play("thunder");
+                            break;
+                    }
                 }
             }
             else {

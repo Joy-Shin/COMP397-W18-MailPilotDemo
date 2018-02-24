@@ -39,6 +39,9 @@ module objects {
 
     public Start():void {
       this.y = 430;
+      let engineSound:createjs.AbstractSoundInstance = createjs.Sound.play("engine");
+      engineSound.loop = -1;
+      engineSound.volume = 0.2;
     }
 
     // Updates the Object every frame

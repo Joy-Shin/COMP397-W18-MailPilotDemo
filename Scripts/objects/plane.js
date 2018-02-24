@@ -40,6 +40,9 @@ var objects;
         };
         Plane.prototype.Start = function () {
             this.y = 430;
+            var engineSound = createjs.Sound.play("engine");
+            engineSound.loop = -1;
+            engineSound.volume = 0.2;
         };
         // Updates the Object every frame
         Plane.prototype.Update = function () {
