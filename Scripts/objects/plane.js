@@ -40,14 +40,15 @@ var objects;
             //this.x = objects.Game.stage.mouseX;
             //keyboard controls
             if (objects.Game.keyboardManager.moveLeft) {
-                this.x -= 5;
+                this.x -= 7;
             }
             if (objects.Game.keyboardManager.moveRight) {
-                this.x += 5;
+                this.x += 7;
             }
         };
         Plane.prototype.Start = function () {
             this.y = 430;
+            this.x = 320;
             var engineSound = createjs.Sound.play("engine");
             engineSound.loop = -1;
             engineSound.volume = 0.2;

@@ -39,16 +39,17 @@ module objects {
 
       //keyboard controls
       if(objects.Game.keyboardManager.moveLeft){
-        this.x -= 5;
+        this.x -= 7;
       }
       if(objects.Game.keyboardManager.moveRight){
-        this.x += 5;
+        this.x += 7;
       }
 
     }
 
     public Start():void {
       this.y = 430;
+      this.x = 320;
       let engineSound:createjs.AbstractSoundInstance = createjs.Sound.play("engine");
       engineSound.loop = -1;
       engineSound.volume = 0.2;

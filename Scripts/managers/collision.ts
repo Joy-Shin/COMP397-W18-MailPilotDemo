@@ -15,9 +15,11 @@ module managers{
                     switch(object2.name){
                         case "island":
                         createjs.Sound.play("yay");
+                        objects.Game.scoreboardManager.Score += 100;
                         break;
                         case "cloud":
                         createjs.Sound.play("thunder");
+                        objects.Game.scoreboardManager.Lives -= 1;
                         break;
                     }
                }

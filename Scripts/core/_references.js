@@ -9,6 +9,7 @@
 /// <reference path="../../Scripts/math/vec2.ts"/>
 /// <reference path="../../Scripts/managers/collision.ts"/>
 /// <reference path="../../Scripts/managers/keyboard.ts"/>
+/// <reference path="../../Scripts/managers/scoreboard.ts"/>
 /// <reference path="../../Scripts/objects/plane.ts"/>
 /// <reference path="../../Scripts/objects/island.ts"/>
 /// <reference path="../../Scripts/objects/cloud.ts"/>

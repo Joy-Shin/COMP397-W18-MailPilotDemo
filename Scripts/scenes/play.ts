@@ -7,6 +7,10 @@ module scenes {
     private _clouds: objects.Cloud[];
     private _cloudNum: number;
 
+    //scorboard display
+    private _scoreBoard: managers.ScoreBoard;
+
+    private _engineSound:createjs.AbstractSoundInstance;
     // Public Properties
 
     // Constructor
@@ -24,6 +28,10 @@ module scenes {
 
     // Initialize Game Variables and objects
     public Start(): void {
+      this._engineSound = createjs.Sound.play("engine");
+      this._engineSound.loop = -1;
+      this._engineSound.volume = 0.2;
+
       this._cloudNum = 3;
       this._ocean = new objects.Ocean(this.assetManager);
       this._plane = new objects.Plane(this.assetManager);
@@ -54,6 +62,11 @@ module scenes {
         //check collision between plane and the current cloud
         managers.Collision.Check(this._plane, cloud);
       });
+
+      if(this._scoreBoard.Lives <= 0){
+        objects.Game.currentScene = config.Scene.OVER;
+        this._engineSound.stop();
+      }
     }
 
     // This is where the fun happens
@@ -72,6 +85,14 @@ module scenes {
         this.addChild(cloud);
       });
 
+      // add the Live Label
+      this.addChild(this._scoreBoard.livesLabel);
+
+      //add the Score Label
+      this.addChild(this._scoreBoard.scoreLabel );
+
+      //add the High Score Label
+      //this.addChild(this._scoreBoard.highScoreLabel);
     }
   }
 }
