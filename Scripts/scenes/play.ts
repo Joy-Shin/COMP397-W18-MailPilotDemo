@@ -36,7 +36,7 @@ module scenes {
       for (let count = 0; count < this._cloudNum; count++) {
          this._clouds[count] =  new objects.Cloud(this.assetManager);
       }
-
+      
       this.Main();
     }
 
@@ -50,6 +50,8 @@ module scenes {
       // update each cloud
       this._clouds.forEach(cloud => {
         cloud.Update();
+
+        //check collision between plane and the current cloud
         managers.Collision.Check(this._plane, cloud);
       });
     }

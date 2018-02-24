@@ -13,6 +13,6 @@ module config {
         public static D: number = 68;
 
         //Space Bar
-        public static SPACE: number = 32;
+        public static SPACE: number = 32;           
     }
 }

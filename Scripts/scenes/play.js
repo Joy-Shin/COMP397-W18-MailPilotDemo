@@ -44,6 +44,7 @@ var scenes;
             // update each cloud
             this._clouds.forEach(function (cloud) {
                 cloud.Update();
+                //check collision between plane and the current cloud
                 managers.Collision.Check(_this._plane, cloud);
             });
         };
