@@ -36,7 +36,15 @@ var objects;
             }
         };
         Plane.prototype.Move = function () {
-            this.x = objects.Game.stage.mouseX;
+            //mouse control
+            //this.x = objects.Game.stage.mouseX;
+            //keyboard controls
+            if (objects.Game.keyboardManager.moveLeft) {
+                this.x -= 5;
+            }
+            if (objects.Game.keyboardManager.moveRight) {
+                this.x += 5;
+            }
         };
         Plane.prototype.Start = function () {
             this.y = 430;

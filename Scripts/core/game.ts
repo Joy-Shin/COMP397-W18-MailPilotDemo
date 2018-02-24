@@ -50,6 +50,7 @@
     currentState = config.Scene.START;
 
     keyboardManager = new managers.Keyboard();
+    objects.Game.keyboardManager = this.keyboardManager;
     Main();
   }
 

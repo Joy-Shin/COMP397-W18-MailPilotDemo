@@ -42,6 +42,7 @@
         objects.Game.currentScene = config.Scene.START;
         currentState = config.Scene.START;
         keyboardManager = new managers.Keyboard();
+        objects.Game.keyboardManager = this.keyboardManager;
         Main();
     }
     function Update() {
